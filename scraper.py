@@ -14,7 +14,7 @@ record = {}
 #
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
-names = root.cssselect("td div")
+names = root.cssselect("td div a")
 for i in names:
   print i.attrib['href']
   print i.text.encode("ascii", "ignore")

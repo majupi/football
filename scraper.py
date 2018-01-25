@@ -15,16 +15,16 @@ record = {}
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
 names = root.cssselect("td div a")
-for i in names:
+#for i in names:
   print i.attrib['href']
   print i.text.encode("ascii", "ignore")
   record['link'] = i.attrib['href']
   record['name'] = i.text.encode("ascii", "ignore")
   print record
-  scraperwiki.sqlite.save(unique_keys=['link','name'], data=record) # this saves the data in a way you can download it.
-  
+  scraperwiki.sqlite.save(unique_keys=['link'], data=record) # this saves the data in a way you can download it.
 
-  
+age = root.cssselect("td div[2]")
+print age
 
   
   

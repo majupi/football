@@ -19,6 +19,8 @@ for i in names:
   print i.attrib['href']
   record['link'] = i.attrib['href']
   print record
+  scraperwiki.sqlite.save(unique_keys=['link'], data=record)
+
   
   
 

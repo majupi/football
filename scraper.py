@@ -17,6 +17,7 @@ root = lxml.html.fromstring(html)
 names = root.cssselect("td div a")
 for i in names:
   print i.attrib['href']
+  print i.text.encode("ascii", "ignore")
   record['link'] = i.attrib['href']
   print record
   scraperwiki.sqlite.save(unique_keys=['link'], data=record) # this saves the data in a way you can download it.

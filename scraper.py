@@ -26,6 +26,9 @@ root = lxml.html.fromstring(html)
 players = root.cssselect("td")
 print players
 
+for i in players:
+  print i.attrib
+
   
   
 

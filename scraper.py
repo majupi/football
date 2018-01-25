@@ -19,7 +19,7 @@ for i in names:
   # print i.attrib['href']
   record['link'] = i.attrib['href']
   record['name'] = i.text.encode('ascii', 'ignore') # made to ignore special characters like ü,è,ä
-  # print record
+  print record
   scraperwiki.sqlite.save(unique_keys=['link'], data=record) # this saves the data in a way you can download it.
 
   
